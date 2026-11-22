@@ -5,3 +5,4 @@ import Collatz.Energy
 import Collatz.Bounds
 import Collatz.EnergyDescent
 import Collatz.Sieve
+import Collatz.Main
