@@ -8,3 +8,4 @@ import Collatz.Sieve
 import Collatz.Main
 import Collatz.Open
 import Collatz.Congruence
+import Collatz.ClassDescent
