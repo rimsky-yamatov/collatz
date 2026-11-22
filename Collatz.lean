@@ -10,3 +10,4 @@ import Collatz.Open
 import Collatz.Congruence
 import Collatz.ClassDescent
 import Collatz.Certify
+import Collatz.Coverage
