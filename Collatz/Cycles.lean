@@ -45,7 +45,7 @@ theorem cycle_trivial_of_verified {N : Nat} (hv : ∀ n, 0 < n → n ≤ N → R
   rcases orbit_one t with h | h | h <;> rw [h] at hq <;> omega
 
 theorem no_small_cycles :
-    ∀ n k, 0 < k → 0 < n → n ≤ 100000 → iter k n = n → n = 1 ∨ n = 2 ∨ n = 4 :=
-  fun _ _ hk hn hnN hc => cycle_trivial_of_verified verified_100000 hk hn hnN hc
+    ∀ n k, 0 < k → 0 < n → n ≤ 1000000 → iter k n = n → n = 1 ∨ n = 2 ∨ n = 4 :=
+  fun _ _ hk hn hnN hc => cycle_trivial_of_verified verified_1000000 hk hn hnN hc
 
 end Collatz
