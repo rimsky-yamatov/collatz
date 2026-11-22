@@ -68,4 +68,17 @@ theorem no_descent_within (m K : Nat) (hm : 0 < m) :
     rw [step_odd (by omega)]
     omega
 
+/-- 停止時間は有界でない: どんな `B` に対しても、`B` ステップ以内に降下しない `n > 1` がある。
+(したがって「有限ステップまでの検査」だけでは、降下基準は完結しない。) -/
+theorem stopping_time_unbounded (B : Nat) :
+    ∃ n, 1 < n ∧ ∀ k, k ≤ B → n ≤ iter k n := by
+  refine ⟨2 ^ (B + 2) - 1, ?_, ?_⟩
+  · have : 4 ≤ 2 ^ (B + 2) := by
+      calc 4 = 2 ^ 2 := by decide
+        _ ≤ 2 ^ (B + 2) := Nat.pow_le_pow_right (by decide) (by omega)
+    omega
+  · intro k hk
+    have := no_descent_within 1 (B + 2) (by decide) k (by omega)
+    simpa using this
+
 end Collatz
