@@ -29,4 +29,11 @@ theorem badClasses_8 : badClasses 8 =
 
 theorem badClasses_12_length : (badClasses 12).length = 228 := by decide +kernel
 
+/-- 末尾再帰の個数カウント(巨大なリストを作らない)。 -/
+def countBad (K : Nat) : Nat → Nat → Nat
+  | 0, acc => acc
+  | i + 1, acc => countBad K i (if certify K i then acc else acc + 1)
+
+theorem countBad_12 : countBad 12 (2 ^ 12) 0 = 228 := by decide +kernel
+
 end Collatz
