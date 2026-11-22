@@ -9,3 +9,4 @@ import Collatz.Main
 import Collatz.Open
 import Collatz.Congruence
 import Collatz.ClassDescent
+import Collatz.Certify
